@@ -29,8 +29,8 @@ public class MyDbContext : DbContext
     public DbSet<Message> Message { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        //const string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=myDataBase=OSM.PaymentOrder;User Id=OSM_SA_Replica;Password=Corner123;";
-        const string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=OSM.PaymentOrder;Integrated Security=true;";
+        const string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=OSM.PaymentOrder;User Id=OSM_SA_Replica;Password=Corner123;";
+        //const string ConnectionString = "Server=(localdb)\\MSSQLLocalDB;Initial Catalog=OSM.PaymentOrder;Integrated Security=true;";
         optionsBuilder.UseSqlServer(ConnectionString);
         optionsBuilder.EnableSensitiveDataLogging();
         optionsBuilder.UseLoggerFactory(LoggerFactory.Create(builder =>
